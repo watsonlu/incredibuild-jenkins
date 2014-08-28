@@ -1,6 +1,8 @@
 package org.jenkinsci.plugins.incredibuild;
 import hudson.Launcher;
 import hudson.Extension;
+import hudson.Proc;
+import hudson.util.ArgumentListBuilder;
 import hudson.util.FormValidation;
 import hudson.model.AbstractBuild;
 import hudson.model.BuildListener;
@@ -8,6 +10,7 @@ import hudson.model.AbstractProject;
 import hudson.tasks.Builder;
 import hudson.tasks.BuildStepDescriptor;
 import net.sf.json.JSONObject;
+import org.jenkinsci.plugins.incredibuild.Commands.BuildConsoleCommand;
 import org.kohsuke.stapler.DataBoundConstructor;
 import org.kohsuke.stapler.StaplerRequest;
 import org.kohsuke.stapler.QueryParameter;
@@ -23,7 +26,7 @@ import java.io.IOException;
  * {@link DescriptorImpl#newInstance(StaplerRequest)} is invoked
  * and a new {@link HelloWorldBuilder} is created. The created
  * instance is persisted to the project configuration XML by using
- * XStream, so this allows you to use instance fields (like {@link #name})
+ * XStream, so this allows you to use instance fields (like {@link #path})
  * to remember the configuration.
  *
  * <p>
@@ -34,19 +37,31 @@ import java.io.IOException;
  */
 public class HelloWorldBuilder extends Builder {
 
-    private final String name;
+    private final String path;
+    private final String configuration;
+    private final String project;
 
     // Fields in config.jelly must match the parameter names in the "DataBoundConstructor"
     @DataBoundConstructor
-    public HelloWorldBuilder(String name) {
-        this.name = name;
+    public HelloWorldBuilder(String path, String configuration, String project) {
+        this.path = path;
+        this.configuration = configuration;
+        this.project = project;
     }
 
     /**
      * We'll use this from the <tt>config.jelly</tt>.
      */
-    public String getName() {
-        return name;
+    public String getPath() {
+        return path;
+    }
+
+    public String getProject() {
+        return project;
+    }
+
+    public String getConfiguration() {
+        return configuration;
     }
 
     @Override
@@ -55,10 +70,33 @@ public class HelloWorldBuilder extends Builder {
         // Since this is a dummy, we just say 'hello world' and call that a build.
 
         // This also shows how you can consult the global configuration of the builder
-        if (getDescriptor().getUseFrench())
-            listener.getLogger().println("Bonjour, "+name+"!");
-        else
-            listener.getLogger().println("Hello, "+name+"!");
+        //if (getDescriptor().getBuildConsolePath())
+        //  listener.getLogger().println("Bonjour, "+path+"!");
+        //else
+        //listener.getLogger().println("Hello, "+path+"!");
+        //return true;
+        try {
+            listener.getLogger().println("Running an Incredibuild build");
+            BuildConsoleCommand buildConsoleCommand = new BuildConsoleCommand(getConfiguration(), getProject(), getPath());
+            listener.getLogger().println("Solution: " + getPath());
+            listener.getLogger().println("Project: " + getProject());
+            listener.getLogger().println("Configuration: " + getConfiguration());
+
+            Launcher.ProcStarter ps = launcher.new ProcStarter();
+            ps = ps.cmds(buildConsoleCommand.getArguments()).stdout(listener);
+            ps = ps.pwd(build.getWorkspace()).envs(build.getEnvironment(listener));
+            Proc proc = launcher.launch(ps);
+            int retcode = proc.join();
+            if (retcode != 0) {
+                return false;
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
         return true;
     }
 
@@ -87,7 +125,8 @@ public class HelloWorldBuilder extends Builder {
          * <p>
          * If you don't want fields to be persisted, use <tt>transient</tt>.
          */
-        private boolean useFrench;
+
+        private String buildconsolepath;
 
         /**
          * In order to load the persisted global configuration, you have to 
@@ -127,14 +166,14 @@ public class HelloWorldBuilder extends Builder {
          * This human readable name is used in the configuration screen.
          */
         public String getDisplayName() {
-            return "Say hello world";
+            return "Build a project with Incredibuild";
         }
 
         @Override
         public boolean configure(StaplerRequest req, JSONObject formData) throws FormException {
             // To persist global configuration information,
             // set that to properties and call save().
-            useFrench = formData.getBoolean("useFrench");
+            buildconsolepath = formData.getString("buildconsolepath");
             // ^Can also use req.bindJSON(this, formData);
             //  (easier when there are many fields; need set* methods for this, like setUseFrench)
             save();
@@ -147,8 +186,8 @@ public class HelloWorldBuilder extends Builder {
          * The method name is bit awkward because global.jelly calls this method to determine
          * the initial state of the checkbox by the naming convention.
          */
-        public boolean getUseFrench() {
-            return useFrench;
+        public String getBuildConsolePath() {
+            return buildconsolepath;
         }
     }
 }
