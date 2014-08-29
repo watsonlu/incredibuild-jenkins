@@ -1,0 +1,42 @@
+Started by user [8mha:AAAAlh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzOEgYu/dLi1CL9vNKcHACFIKlWvwAAAA==[0manonymous
+Building in workspace E:\git\ib-plugin\work\jobs\helloworldtest\workspace
+[workspace] $ cmd /c call C:\Users\lwatson\AppData\Local\Temp\hudson3303722256694534318.bat
+
+E:\git\ib-plugin\work\jobs\helloworldtest\workspace>xcopy "C:\Users\lwatson\Documents\visual studio 2013\Projects\BlankTestProject" . /e /s /y 
+C:\Users\lwatson\Documents\visual studio 2013\Projects\BlankTestProject\BlankTestProject.sdf
+C:\Users\lwatson\Documents\visual studio 2013\Projects\BlankTestProject\BlankTestProject.sln
+C:\Users\lwatson\Documents\visual studio 2013\Projects\BlankTestProject\BlankTestProject\BlankTestProject.cpp
+C:\Users\lwatson\Documents\visual studio 2013\Projects\BlankTestProject\BlankTestProject\BlankTestProject.vcxproj
+C:\Users\lwatson\Documents\visual studio 2013\Projects\BlankTestProject\BlankTestProject\BlankTestProject.vcxproj.filters
+C:\Users\lwatson\Documents\visual studio 2013\Projects\BlankTestProject\BlankTestProject\ReadMe.txt
+C:\Users\lwatson\Documents\visual studio 2013\Projects\BlankTestProject\BlankTestProject\stdafx.cpp
+C:\Users\lwatson\Documents\visual studio 2013\Projects\BlankTestProject\BlankTestProject\stdafx.h
+C:\Users\lwatson\Documents\visual studio 2013\Projects\BlankTestProject\BlankTestProject\targetver.h
+C:\Users\lwatson\Documents\visual studio 2013\Projects\BlankTestProject\ipch\blanktestproject-cb787f7c\blanktestproject-717da4cb.ipch
+10 File(s) copied
+
+E:\git\ib-plugin\work\jobs\helloworldtest\workspace>exit 0 
+Running an Incredibuild build
+Solution: BlankTestProject.sln
+Project: BlankTestProject
+Configuration: Debug
+[workspace] $ C:\Program Files (x86)\Xoreax\IncrediBuild\BuildConsole.exe BlankTestProject.sln /Cfg="Debug" /Prj="BlankTestProject"
+
+-----------------------------------------------------------------
+Build Acceleration Console 5.0 (build 1496)
+Copyright (C) 2001-2013 Xoreax Software Ltd. All rights reserved.
+-----------------------------------------------------------------
+
+
+Initializing...
+--------------------Build System Error-----------------------------------------
+Failed to initialize Build System:
+    Failed to load build set.
+    Solution Config/Platform 'Debug' cannot be mapped to the project
+
+-------------------------------------------------------------------------------
+ 
+1 build system error(s)
+ 
+Build step 'Build a project with Incredibuild' marked build as failure
+Finished: FAILURE

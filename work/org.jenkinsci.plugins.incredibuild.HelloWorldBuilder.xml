@@ -1,0 +1,4 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<org.jenkinsci.plugins.incredibuild.HelloWorldBuilder_-DescriptorImpl plugin="incredibuild@1.0-SNAPSHOT">
+    <buildconsolepath>C:\Program Files (x86)\Xoreax\IncrediBuild\BuildConsole.exe</buildconsolepath>
+</org.jenkinsci.plugins.incredibuild.HelloWorldBuilder_-DescriptorImpl>

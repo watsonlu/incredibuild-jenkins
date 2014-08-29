@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Group-Id: org.jenkins-ci.plugins
+Short-Name: incredibuild
+Long-Name: incredibuild
+Url: http://jenkins-ci.org/plugin/incredibuild/
+Plugin-Version: 1.0-SNAPSHOT (private-08/29/2014 12:21-lwatson)
+Hudson-Version: 1.532.3
+Jenkins-Version: 1.532.3
+Plugin-Dependencies: ui-samples-plugin:1.532.3
+Plugin-Developers: 
+Libraries: E:\git\ib-plugin\target\classes
+Resource-Path: E:\git\ib-plugin\src\main\webapp
+

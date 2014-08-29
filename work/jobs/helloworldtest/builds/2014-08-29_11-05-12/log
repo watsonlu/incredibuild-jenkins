@@ -1,0 +1,37 @@
+Started by user [8mha:AAAAlh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzOEgYu/dLi1CL9vNKcHACFIKlWvwAAAA==[0manonymous
+Building in workspace E:\git\ib-plugin\work\jobs\helloworldtest\workspace
+[workspace] $ cmd /c call C:\Users\lwatson\AppData\Local\Temp\hudson3594546646713741700.bat
+
+E:\git\ib-plugin\work\jobs\helloworldtest\workspace>xcopy "C:\Users\lwatson\Documents\visual studio 2013\Projects\BlankTestProject" . /e /s /y 
+C:\Users\lwatson\Documents\visual studio 2013\Projects\BlankTestProject\BlankTestProject.sdf
+C:\Users\lwatson\Documents\visual studio 2013\Projects\BlankTestProject\BlankTestProject.sln
+C:\Users\lwatson\Documents\visual studio 2013\Projects\BlankTestProject\BlankTestProject\BlankTestProject.cpp
+C:\Users\lwatson\Documents\visual studio 2013\Projects\BlankTestProject\BlankTestProject\BlankTestProject.vcxproj
+C:\Users\lwatson\Documents\visual studio 2013\Projects\BlankTestProject\BlankTestProject\BlankTestProject.vcxproj.filters
+C:\Users\lwatson\Documents\visual studio 2013\Projects\BlankTestProject\BlankTestProject\ReadMe.txt
+C:\Users\lwatson\Documents\visual studio 2013\Projects\BlankTestProject\BlankTestProject\stdafx.cpp
+C:\Users\lwatson\Documents\visual studio 2013\Projects\BlankTestProject\BlankTestProject\stdafx.h
+C:\Users\lwatson\Documents\visual studio 2013\Projects\BlankTestProject\BlankTestProject\targetver.h
+C:\Users\lwatson\Documents\visual studio 2013\Projects\BlankTestProject\ipch\blanktestproject-cb787f7c\blanktestproject-717da4cb.ipch
+10 File(s) copied
+
+E:\git\ib-plugin\work\jobs\helloworldtest\workspace>exit 0 
+Running an Incredibuild build
+Solution: BlankTestProject.sln
+Project: 
+Configuration: Debug|Win32
+Wait: true
+Rebuild: true
+FATAL: null
+[8mha:AAAAWB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P08vOT+vOD8nVc8DzHWtSE4tKMnMz/PLL0ldFVf2c+b/lb5MDAwVRQxSaBqcITRIIQMEMIIUFgAAckCEiWAAAAA=[0mjava.lang.NullPointerException
+	at org.jenkinsci.plugins.incredibuild.Commands.BuildConsoleCommand.getArguments(BuildConsoleCommand.java:35)
+	at org.jenkinsci.plugins.incredibuild.HelloWorldBuilder.perform(HelloWorldBuilder.java:94)
+	at hudson.tasks.BuildStepMonitor$1.perform(BuildStepMonitor.java:20)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.perform(AbstractBuild.java:785)
+	at hudson.model.Build$BuildExecution.build(Build.java:199)
+	at hudson.model.Build$BuildExecution.doRun(Build.java:160)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.run(AbstractBuild.java:566)
+	at hudson.model.Run.execute(Run.java:1665)
+	at hudson.model.FreeStyleBuild.run(FreeStyleBuild.java:46)
+	at hudson.model.ResourceController.execute(ResourceController.java:88)
+	at hudson.model.Executor.run(Executor.java:246)

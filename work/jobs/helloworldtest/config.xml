@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project>
+    <actions/>
+    <description></description>
+    <keepDependencies>false</keepDependencies>
+    <properties/>
+    <scm class="hudson.scm.NullSCM"/>
+    <canRoam>true</canRoam>
+    <disabled>false</disabled>
+    <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+    <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+    <triggers/>
+    <concurrentBuild>false</concurrentBuild>
+    <builders>
+        <hudson.tasks.BatchFile>
+            <command>xcopy &quot;C:\Users\lwatson\Documents\visual studio 2013\Projects\BlankTestProject&quot; . /e /s
+                /y
+            </command>
+        </hudson.tasks.BatchFile>
+        <org.jenkinsci.plugins.incredibuild.HelloWorldBuilder plugin="incredibuild@1.0-SNAPSHOT">
+            <path>HelloWorldTest.sln</path>
+            <configuration>Debug|Win32</configuration>
+            <project></project>
+            <wait>true</wait>
+            <rebuild>true</rebuild>
+        </org.jenkinsci.plugins.incredibuild.HelloWorldBuilder>
+    </builders>
+    <publishers/>
+    <buildWrappers/>
+</project>

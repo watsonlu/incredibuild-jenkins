@@ -1,0 +1,69 @@
+Started by user [8mha:AAAAlh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzOEgYu/dLi1CL9vNKcHACFIKlWvwAAAA==[0manonymous
+Building in workspace E:\git\ib-plugin\work\jobs\helloworldtest\workspace
+[workspace] $ cmd /c call C:\Users\lwatson\AppData\Local\Temp\hudson8757340604976752739.bat
+
+E:\git\ib-plugin\work\jobs\helloworldtest\workspace>xcopy "C:\Users\lwatson\Documents\visual studio 2013\Projects\BlankTestProject" . /e /s /y 
+C:\Users\lwatson\Documents\visual studio 2013\Projects\BlankTestProject\BlankTestProject.sdf
+C:\Users\lwatson\Documents\visual studio 2013\Projects\BlankTestProject\BlankTestProject.sln
+C:\Users\lwatson\Documents\visual studio 2013\Projects\BlankTestProject\BlankTestProject\BlankTestProject.cpp
+C:\Users\lwatson\Documents\visual studio 2013\Projects\BlankTestProject\BlankTestProject\BlankTestProject.vcxproj
+C:\Users\lwatson\Documents\visual studio 2013\Projects\BlankTestProject\BlankTestProject\BlankTestProject.vcxproj.filters
+C:\Users\lwatson\Documents\visual studio 2013\Projects\BlankTestProject\BlankTestProject\ReadMe.txt
+C:\Users\lwatson\Documents\visual studio 2013\Projects\BlankTestProject\BlankTestProject\stdafx.cpp
+C:\Users\lwatson\Documents\visual studio 2013\Projects\BlankTestProject\BlankTestProject\stdafx.h
+C:\Users\lwatson\Documents\visual studio 2013\Projects\BlankTestProject\BlankTestProject\targetver.h
+C:\Users\lwatson\Documents\visual studio 2013\Projects\BlankTestProject\ipch\blanktestproject-cb787f7c\blanktestproject-717da4cb.ipch
+10 File(s) copied
+
+E:\git\ib-plugin\work\jobs\helloworldtest\workspace>exit 0 
+Running an Incredibuild build
+Solution: BlankTestProject.sln
+Project: 
+Configuration: Debug|Win32
+Wait: true
+Rebuild: true
+[workspace] $ C:\Program Files (x86)\Xoreax\IncrediBuild\BuildConsole.exe BlankTestProject.sln /Cfg="Debug|Win32" /wait /Rebuild
+
+-----------------------------------------------------------------
+Build Acceleration Console 5.0 (build 1496)
+Copyright (C) 2001-2013 Xoreax Software Ltd. All rights reserved.
+-----------------------------------------------------------------
+
+
+Initializing...
+
+Microsoft Visual Studio 2013 Version 12.0.21005.1.
+Copyright (C) Microsoft Corp. All rights reserved.
+
+The license for Visual Studio expires in 56 days.
+1>------ Rebuild All started: Project: BlankTestProject, Configuration: Debug Win32 ------
+1>Build started 8/29/2014 11:08:37 AM.
+1>_PrepareForClean:
+1>  Deleting file "Debug\BlankTestProject.tlog\BlankTestProject.lastbuildstate".
+--------------------Build System Warning---------------------------------------
+Only Helper machines with Vista OS or higher will participate in build execution.:
+    The .Net framework used on the Initiator machine is only supported on Vista operating systems or higher.
+    As a result, only Helpers with Vista operating systems or higher will participate in this build execution.
+
+-------------------------------------------------------------------------------
+1>InitializeBuildStatus:
+1>  Creating "Debug\BlankTestProject.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+1>ClCompile:
+1>  stdafx.cpp
+1>  BlankTestProject.cpp
+1>Link:
+1>  
+1>  BlankTestProject.vcxproj -> E:\git\ib-plugin\work\jobs\helloworldtest\workspace\Debug\BlankTestProject.exe
+1>FinalizeBuildStatus:
+1>  Deleting file "Debug\BlankTestProject.tlog\unsuccessfulbuild".
+1>  Touching "Debug\BlankTestProject.tlog\BlankTestProject.lastbuildstate".
+1>
+1>Build succeeded.
+1>
+1>Time Elapsed 00:00:01.18
+========== Rebuild All: 1 succeeded, 0 failed, 0 skipped ==========
+ 
+1 build system warning(s):
+   - Only Helper machines with Vista OS or higher will participate in build execution.
+ 
+Finished: SUCCESS
