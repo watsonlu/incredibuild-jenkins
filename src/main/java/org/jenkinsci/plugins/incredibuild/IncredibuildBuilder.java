@@ -122,6 +122,8 @@ public class IncredibuildBuilder extends Builder {
      * See <tt>src/main/resources/hudson/plugins/hello_world/IncredibuildBuilder/*.jelly</tt>
      * for the actual HTML fragment for the configuration screen.
      */
+
+
     @Extension // This indicates to Jenkins that this is an implementation of an extension point.
     public static final class DescriptorImpl extends BuildStepDescriptor<Builder> {
         /**
@@ -143,23 +145,20 @@ public class IncredibuildBuilder extends Builder {
         }
 
         /**
-         * Performs on-the-fly validation of the form field 'name'.
+         * Performs on-the-fly validation of the form field 'Path'.
          *
          * @param value
-         *      This parameter receives the value that the user has typed.
-         * @return
-         *      Indicates the outcome of the validation. This is sent to the browser.
-         *      <p>
-         *      Note that returning {@link FormValidation#error(String)} does not
-         *      prevent the form from being saved. It just means that a message
-         *      will be displayed to the user. 
+         *            This parameter receives the value that the user has typed.
+         * @return Indicates the outcome of the validation. This is sent to the
+         *         browser.
          */
-        public FormValidation doCheckPath(@QueryParameter String value)
-                throws IOException, ServletException {
-            if (value.length() == 0)
-                return FormValidation.error("Please set a solution file");
+        public FormValidation doCheckPath(@QueryParameter String value) throws IOException, ServletException {
+            if (value.isEmpty()) {
+                return FormValidation.error("Path to Solution is required.");
+            }
             return FormValidation.ok();
         }
+
 
         public boolean isApplicable(Class<? extends AbstractProject> aClass) {
             // Indicates that this builder can be used with all kinds of project types 

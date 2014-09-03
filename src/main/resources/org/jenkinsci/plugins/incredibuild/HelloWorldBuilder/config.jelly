@@ -10,7 +10,7 @@
     When submitted, it will be passed to the corresponding constructor parameter.
   -->
   <f:entry title="Project Path" field="path">
-    <f:textbox />
+    <f:textbox checkUrl="'descriptorByName/IncredibuildBuilder/checkPath?value='+escape(this.value)" />
   </f:entry>
     <f:entry title="Configuration" field="configuration">
       <f:textbox />
